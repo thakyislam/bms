@@ -7,7 +7,7 @@ $db = $database->getConnection();
 
 $book = new Book($db);
 
-if ($_POST) {
+if (isset($_POST['id'])) {
     $book->id = $_POST['id'];
     if ($book->delete()) {
         echo "<div>Book was deleted.</div>";
